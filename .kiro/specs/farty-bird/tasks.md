@@ -181,43 +181,43 @@
     - **Property 8: Gap position variation**
     - **Validates: Requirements 2.5**
 
-- [ ] 10. Implement GameScene
-  - [ ] 10.1 Create GameScene class extending SKScene
+- [x] 10. Implement GameScene
+  - [x] 10.1 Create GameScene class extending SKScene
     - Set up scene with background, ground, character
     - Initialize ObstacleManager
     - Set up physics world and contact delegate
     - _Requirements: 1.5, 8.2, 8.3_
 
-  - [ ] 10.2 Implement game loop in update()
+  - [x] 10.2 Implement game loop in update()
     - Update character physics
     - Update obstacle positions
     - Remove offscreen obstacles
     - Check for scoring (character passing through gap)
     - _Requirements: 1.5, 2.2, 2.3, 4.1_
 
-  - [ ] 10.3 Implement touch handling
+  - [x] 10.3 Implement touch handling
     - Detect tap input
     - Call character.applyFartThrust()
     - Trigger fart animation and particle effect
     - Play fart sound via AudioManager
     - _Requirements: 1.1, 7.2, 7.7, 12.1_
 
-  - [ ] 10.4 Implement collision detection
+  - [x] 10.4 Implement collision detection
     - Implement SKPhysicsContactDelegate methods
     - Detect character-obstacle collisions
     - Detect character-ground collisions
     - Detect character-scoreZone contacts for scoring
     - _Requirements: 3.1, 3.2, 4.1_
 
-  - [ ] 10.5 Write property test for collision triggering game over
+  - [x] 10.5 Write property test for collision triggering game over
     - **Property 9: Collision triggers game over**
     - **Validates: Requirements 3.1**
 
-  - [ ] 10.6 Write property test for score increment
+  - [x] 10.6 Write property test for score increment
     - **Property 11: Passing obstacle increments score**
     - **Validates: Requirements 4.1**
 
-  - [ ] 10.7 Implement game over sequence
+  - [x] 10.7 Implement game over sequence
     - Stop all game object movement
     - Play character falling animation
     - Play collision sound
@@ -226,50 +226,50 @@
     - Transition to GameOverScene after delay
     - _Requirements: 3.4, 3.5, 7.4, 7.5, 7.6, 12.2_
 
-  - [ ] 10.8 Write property test for game over stopping movement
+  - [x] 10.8 Write property test for game over stopping movement
     - **Property 10: Game over stops movement**
     - **Validates: Requirements 3.4**
 
-  - [ ] 10.9 Write property test for death sequence
+  - [x] 10.9 Write property test for death sequence
     - **Property 18: Death sequence completion**
     - **Validates: Requirements 7.4, 7.5**
 
-  - [ ] 10.10 Implement scrolling background
+  - [x] 10.10 Implement scrolling background
     - Create two background sprites for seamless scrolling
     - Update positions in update() loop
     - Reset position when off-screen
     - _Requirements: 8.2_
 
-  - [ ] 10.11 Write property test for background scrolling
+  - [x] 10.11 Write property test for background scrolling
     - **Property 20: Background scrolling**
     - **Validates: Requirements 8.2**
 
-  - [ ] 10.12 Implement scrolling ground
+  - [x] 10.12 Implement scrolling ground
     - Create two ground sprites for seamless scrolling
     - Scroll at same speed as obstacles
     - Reset position when off-screen
     - _Requirements: 8.3_
 
-  - [ ] 10.13 Write property test for ground scrolling
+  - [x] 10.13 Write property test for ground scrolling
     - **Property 21: Ground scrolling**
     - **Validates: Requirements 8.3**
 
-  - [ ] 10.14 Add score display label
+  - [x] 10.14 Add score display label
     - Create SKLabelNode for current score
     - Update on score increment
     - Position at top center of screen
     - _Requirements: 4.2_
 
-  - [ ] 10.15 Implement difficulty configuration
+  - [x] 10.15 Implement difficulty configuration
     - Load GameConfiguration based on selected difficulty
     - Apply gap size and spawn interval to ObstacleManager
     - _Requirements: 6.2, 6.3_
 
-  - [ ] 10.16 Write property test for easy mode gap size
+  - [x] 10.16 Write property test for easy mode gap size
     - **Property 14: Easy mode gap size increase**
     - **Validates: Requirements 6.2**
 
-  - [ ] 10.17 Write property test for easy mode spawn interval
+  - [x] 10.17 Write property test for easy mode spawn interval
     - **Property 15: Easy mode spawn interval increase**
     - **Validates: Requirements 6.3**
 
