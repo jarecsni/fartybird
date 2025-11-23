@@ -1,0 +1,19 @@
+{
+  "currentTheme": "chicken",
+  "themes": {
+    "chicken": {
+      "path": "Themes/chicken",
+      "displayName": "Farty Chicken"
+    }
+  },
+  "assetNames": {
+    "characterIdle": "character_idle",
+    "characterFart": "character_fart",
+    "characterFalling": "character_falling",
+    "pipeTop": "pipe_top",
+    "pipeBottom": "pipe_bottom",
+    "backgroundSky": "background_sky",
+    "ground": "ground",
+    "tombstone": "tombstone"
+  }
+}

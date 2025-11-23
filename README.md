@@ -16,9 +16,10 @@ Tap to fart, stay aloft, avoid obstacles. It's that simple. It's that ridiculous
 - SpriteKit for 2D game engine
 - Pixel art graphics
 
-## Future Enhancements (v2.0)
+## Documentation
 
-See [FUTURE.md](FUTURE.md) for planned features and ideas.
+- [Asset Generation Guide](docs/ASSET_GENERATION_GUIDE.md) - How to generate pixel art sprites using PixelLab
+- [Future Enhancements](docs/FUTURE.md) - Planned features for v2.0 and beyond
 
 ## Development
 
