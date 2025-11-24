@@ -17,12 +17,32 @@ let package = Package(
     targets: [
         .target(
             name: "FartyBird",
-            dependencies: []),
+            dependencies: [],
+            path: "FartyBird",
+            exclude: ["Info.plist", "Assets.xcassets", "Assets"],
+            sources: [
+                "AppDelegate.swift",
+                "GameViewController.swift",
+                "Managers/AssetManager.swift",
+                "Managers/AudioManager.swift",
+                "Managers/ObstacleManager.swift",
+                "Managers/PhysicsManager.swift",
+                "Managers/ScoreManager.swift",
+                "Models/AssetConfiguration.swift",
+                "Models/GameConfiguration.swift",
+                "Models/GameState.swift",
+                "Nodes/CharacterNode.swift",
+                "Nodes/FartParticleEmitter.swift",
+                "Nodes/ObstacleNode.swift",
+                "Scenes/GameScene.swift",
+                "Scenes/MenuScene.swift"
+            ]),
         .testTarget(
             name: "FartyBirdTests",
             dependencies: [
                 "FartyBird",
                 "SwiftCheck"
-            ])
+            ],
+            path: "FartyBirdTests")
     ]
 )

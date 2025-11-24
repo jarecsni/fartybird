@@ -273,17 +273,17 @@
     - **Property 15: Easy mode spawn interval increase**
     - **Validates: Requirements 6.3**
 
-- [ ] 11. Checkpoint - Ensure all tests pass
+- [x] 11. Checkpoint - Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 12. Implement MenuScene
-  - [ ] 12.1 Create MenuScene class extending SKScene
+- [x] 12. Implement MenuScene
+  - [x] 12.1 Create MenuScene class extending SKScene
     - Add title logo sprite
     - Add play button sprite
     - Add settings button sprite
     - _Requirements: 9.1_
 
-  - [ ] 12.2 Implement touch handling
+  - [x] 12.2 Implement touch handling
     - Detect tap on play button
     - Transition to GameScene
     - Detect tap on settings button

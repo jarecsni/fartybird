@@ -3,16 +3,56 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B2B32ADF2ED3E0B2003767CB /* CharacterNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B32AD82ED3E0B2003767CB /* CharacterNode.swift */; };
+		B2B32AE02ED3E0B2003767CB /* PhysicsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B32AD12ED3E0B2003767CB /* PhysicsManager.swift */; };
+		B2B32AE12ED3E0B2003767CB /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B32ADC2ED3E0B2003767CB /* GameScene.swift */; };
+		B2B32AE22ED3E0B2003767CB /* ObstacleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B32AD02ED3E0B2003767CB /* ObstacleManager.swift */; };
+		B2B32AE32ED3E0B2003767CB /* FartParticleEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B32AD92ED3E0B2003767CB /* FartParticleEmitter.swift */; };
+		B2B32AE42ED3E0B2003767CB /* AssetConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B32AD42ED3E0B2003767CB /* AssetConfiguration.swift */; };
+		B2B32AE52ED3E0B2003767CB /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B32AD62ED3E0B2003767CB /* GameState.swift */; };
+		B2B32AE62ED3E0B2003767CB /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B32ADD2ED3E0B2003767CB /* MenuScene.swift */; };
+		B2B32AE72ED3E0B2003767CB /* ObstacleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B32ADA2ED3E0B2003767CB /* ObstacleNode.swift */; };
+		B2B32AE82ED3E0B2003767CB /* GameConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B32AD52ED3E0B2003767CB /* GameConfiguration.swift */; };
+		B2B32AE92ED3E0B2003767CB /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B32ACF2ED3E0B2003767CB /* AudioManager.swift */; };
+		B2B32AEA2ED3E0B2003767CB /* AssetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B32ACE2ED3E0B2003767CB /* AssetManager.swift */; };
+		B2B32AEB2ED3E0B2003767CB /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B32AD22ED3E0B2003767CB /* ScoreManager.swift */; };
+		B2B32AEC2ED3E0B2003767CB /* asset_config.json in Resources */ = {isa = PBXBuildFile; fileRef = B2B32AC62ED3E0B2003767CB /* asset_config.json */; };
+		B2B32AF02ED3E239003767CB /* SwiftCheck in Frameworks */ = {isa = PBXBuildFile; productRef = B2B32AEF2ED3E239003767CB /* SwiftCheck */; };
 		FA0000010000000000000001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0000020000000000000001 /* AppDelegate.swift */; };
 		FA0000030000000000000001 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0000040000000000000001 /* GameViewController.swift */; };
 		FA0000050000000000000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA0000060000000000000001 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B2B32AB52ED3DFAE003767CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA0000170000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA0000130000000000000001;
+			remoteInfo = FartyBird;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		B2B32AB12ED3DFAE003767CB /* FartyBirdTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FartyBirdTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2B32AC62ED3E0B2003767CB /* asset_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = asset_config.json; sourceTree = "<group>"; };
+		B2B32ACE2ED3E0B2003767CB /* AssetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetManager.swift; sourceTree = "<group>"; };
+		B2B32ACF2ED3E0B2003767CB /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		B2B32AD02ED3E0B2003767CB /* ObstacleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObstacleManager.swift; sourceTree = "<group>"; };
+		B2B32AD12ED3E0B2003767CB /* PhysicsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsManager.swift; sourceTree = "<group>"; };
+		B2B32AD22ED3E0B2003767CB /* ScoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
+		B2B32AD42ED3E0B2003767CB /* AssetConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetConfiguration.swift; sourceTree = "<group>"; };
+		B2B32AD52ED3E0B2003767CB /* GameConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConfiguration.swift; sourceTree = "<group>"; };
+		B2B32AD62ED3E0B2003767CB /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		B2B32AD82ED3E0B2003767CB /* CharacterNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterNode.swift; sourceTree = "<group>"; };
+		B2B32AD92ED3E0B2003767CB /* FartParticleEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FartParticleEmitter.swift; sourceTree = "<group>"; };
+		B2B32ADA2ED3E0B2003767CB /* ObstacleNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObstacleNode.swift; sourceTree = "<group>"; };
+		B2B32ADC2ED3E0B2003767CB /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		B2B32ADD2ED3E0B2003767CB /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		FA0000000000000000000001 /* FartyBird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FartyBird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA0000020000000000000001 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA0000040000000000000001 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -20,7 +60,19 @@
 		FA0000080000000000000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		B2B32AB22ED3DFAE003767CB /* FartyBirdTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = FartyBirdTests; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
+		B2B32AAE2ED3DFAE003767CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2B32AF02ED3E239003767CB /* SwiftCheck in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FA0000090000000000000001 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -31,10 +83,116 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B2B32AC72ED3E0B2003767CB /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				B2B32AC62ED3E0B2003767CB /* asset_config.json */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		B2B32AC82ED3E0B2003767CB /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Particles;
+			sourceTree = "<group>";
+		};
+		B2B32AC92ED3E0B2003767CB /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		B2B32ACA2ED3E0B2003767CB /* chicken */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = chicken;
+			sourceTree = "<group>";
+		};
+		B2B32ACB2ED3E0B2003767CB /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				B2B32ACA2ED3E0B2003767CB /* chicken */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
+		B2B32ACC2ED3E0B2003767CB /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		B2B32ACD2ED3E0B2003767CB /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				B2B32AC72ED3E0B2003767CB /* Config */,
+				B2B32AC82ED3E0B2003767CB /* Particles */,
+				B2B32AC92ED3E0B2003767CB /* Sounds */,
+				B2B32ACB2ED3E0B2003767CB /* Themes */,
+				B2B32ACC2ED3E0B2003767CB /* UI */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		B2B32AD32ED3E0B2003767CB /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				B2B32ACE2ED3E0B2003767CB /* AssetManager.swift */,
+				B2B32ACF2ED3E0B2003767CB /* AudioManager.swift */,
+				B2B32AD02ED3E0B2003767CB /* ObstacleManager.swift */,
+				B2B32AD12ED3E0B2003767CB /* PhysicsManager.swift */,
+				B2B32AD22ED3E0B2003767CB /* ScoreManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		B2B32AD72ED3E0B2003767CB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B2B32AD42ED3E0B2003767CB /* AssetConfiguration.swift */,
+				B2B32AD52ED3E0B2003767CB /* GameConfiguration.swift */,
+				B2B32AD62ED3E0B2003767CB /* GameState.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B2B32ADB2ED3E0B2003767CB /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				B2B32AD82ED3E0B2003767CB /* CharacterNode.swift */,
+				B2B32AD92ED3E0B2003767CB /* FartParticleEmitter.swift */,
+				B2B32ADA2ED3E0B2003767CB /* ObstacleNode.swift */,
+			);
+			path = Nodes;
+			sourceTree = "<group>";
+		};
+		B2B32ADE2ED3E0B2003767CB /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				B2B32ADC2ED3E0B2003767CB /* GameScene.swift */,
+				B2B32ADD2ED3E0B2003767CB /* MenuScene.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		B2B32AEE2ED3E239003767CB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FA0000100000000000000001 = {
 			isa = PBXGroup;
 			children = (
 				FA0000110000000000000001 /* FartyBird */,
+				B2B32AB22ED3DFAE003767CB /* FartyBirdTests */,
+				B2B32AEE2ED3E239003767CB /* Frameworks */,
 				FA0000120000000000000001 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -42,6 +200,11 @@
 		FA0000110000000000000001 /* FartyBird */ = {
 			isa = PBXGroup;
 			children = (
+				B2B32ACD2ED3E0B2003767CB /* Assets */,
+				B2B32AD32ED3E0B2003767CB /* Managers */,
+				B2B32AD72ED3E0B2003767CB /* Models */,
+				B2B32ADB2ED3E0B2003767CB /* Nodes */,
+				B2B32ADE2ED3E0B2003767CB /* Scenes */,
 				FA0000020000000000000001 /* AppDelegate.swift */,
 				FA0000040000000000000001 /* GameViewController.swift */,
 				FA0000060000000000000001 /* Assets.xcassets */,
@@ -54,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				FA0000000000000000000001 /* FartyBird.app */,
+				B2B32AB12ED3DFAE003767CB /* FartyBirdTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,6 +225,30 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B2B32AB02ED3DFAE003767CB /* FartyBirdTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2B32AB92ED3DFAE003767CB /* Build configuration list for PBXNativeTarget "FartyBirdTests" */;
+			buildPhases = (
+				B2B32AAD2ED3DFAE003767CB /* Sources */,
+				B2B32AAE2ED3DFAE003767CB /* Frameworks */,
+				B2B32AAF2ED3DFAE003767CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B2B32AB62ED3DFAE003767CB /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				B2B32AB22ED3DFAE003767CB /* FartyBirdTests */,
+			);
+			name = FartyBirdTests;
+			packageProductDependencies = (
+				B2B32AEF2ED3E239003767CB /* SwiftCheck */,
+			);
+			productName = FartyBirdTests;
+			productReference = B2B32AB12ED3DFAE003767CB /* FartyBirdTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		FA0000130000000000000001 /* FartyBird */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA0000140000000000000001 /* Build configuration list for PBXNativeTarget "FartyBird" */;
@@ -85,9 +273,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1540;
+				LastSwiftUpdateCheck = 1640;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
+					B2B32AB02ED3DFAE003767CB = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = FA0000130000000000000001;
+					};
 					FA0000130000000000000001 = {
 						CreatedOnToolsVersion = 15.4;
 					};
@@ -102,20 +294,32 @@
 				Base,
 			);
 			mainGroup = FA0000100000000000000001;
+			packageReferences = (
+				B2B32AED2ED3E152003767CB /* XCRemoteSwiftPackageReference "SwiftCheck" */,
+			);
 			productRefGroup = FA0000120000000000000001 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				FA0000130000000000000001 /* FartyBird */,
+				B2B32AB02ED3DFAE003767CB /* FartyBirdTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B2B32AAF2ED3DFAE003767CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FA0000160000000000000001 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2B32AEC2ED3E0B2003767CB /* asset_config.json in Resources */,
 				FA0000050000000000000001 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -123,18 +327,84 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B2B32AAD2ED3DFAE003767CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FA0000150000000000000001 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				FA0000010000000000000001 /* AppDelegate.swift in Sources */,
 				FA0000030000000000000001 /* GameViewController.swift in Sources */,
+				B2B32ADF2ED3E0B2003767CB /* CharacterNode.swift in Sources */,
+				B2B32AE02ED3E0B2003767CB /* PhysicsManager.swift in Sources */,
+				B2B32AE12ED3E0B2003767CB /* GameScene.swift in Sources */,
+				B2B32AE22ED3E0B2003767CB /* ObstacleManager.swift in Sources */,
+				B2B32AE32ED3E0B2003767CB /* FartParticleEmitter.swift in Sources */,
+				B2B32AE42ED3E0B2003767CB /* AssetConfiguration.swift in Sources */,
+				B2B32AE52ED3E0B2003767CB /* GameState.swift in Sources */,
+				B2B32AE62ED3E0B2003767CB /* MenuScene.swift in Sources */,
+				B2B32AE72ED3E0B2003767CB /* ObstacleNode.swift in Sources */,
+				B2B32AE82ED3E0B2003767CB /* GameConfiguration.swift in Sources */,
+				B2B32AE92ED3E0B2003767CB /* AudioManager.swift in Sources */,
+				B2B32AEA2ED3E0B2003767CB /* AssetManager.swift in Sources */,
+				B2B32AEB2ED3E0B2003767CB /* ScoreManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		B2B32AB62ED3DFAE003767CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA0000130000000000000001 /* FartyBird */;
+			targetProxy = B2B32AB52ED3DFAE003767CB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		B2B32AB72ED3DFAE003767CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5FLBAP5RR5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jarecsni.FartyBirdTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FartyBird.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FartyBird";
+			};
+			name = Debug;
+		};
+		B2B32AB82ED3DFAE003767CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5FLBAP5RR5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jarecsni.FartyBirdTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FartyBird.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FartyBird";
+			};
+			name = Release;
+		};
 		FA0000190000000000000001 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -321,6 +591,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B2B32AB92ED3DFAE003767CB /* Build configuration list for PBXNativeTarget "FartyBirdTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2B32AB72ED3DFAE003767CB /* Debug */,
+				B2B32AB82ED3DFAE003767CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FA0000140000000000000001 /* Build configuration list for PBXNativeTarget "FartyBird" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -340,6 +619,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B2B32AED2ED3E152003767CB /* XCRemoteSwiftPackageReference "SwiftCheck" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/typelift/SwiftCheck.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.12.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B2B32AEF2ED3E239003767CB /* SwiftCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2B32AED2ED3E152003767CB /* XCRemoteSwiftPackageReference "SwiftCheck" */;
+			productName = SwiftCheck;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FA0000170000000000000001 /* Project object */;
 }
