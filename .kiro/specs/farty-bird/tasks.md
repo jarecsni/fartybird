@@ -370,36 +370,36 @@
     - Resume when app becomes active
     - _Requirements: 13.1_
 
-- [ ] 16. Add placeholder assets
-  - [ ] 16.1 Create placeholder chicken sprites
+- [x] 16. Add placeholder assets
+  - [x] 16.1 Create placeholder chicken sprites
     - Create colored rectangles for idle, fart, falling animations
     - Save as PNG files in Assets/Themes/chicken/
     - _Requirements: 7.1, 7.2, 7.3, 11.5_
 
-  - [ ] 16.2 Create placeholder obstacle sprites
+  - [x] 16.2 Create placeholder obstacle sprites
     - Create colored rectangles for pipe top and bottom
     - Save as PNG files in Assets/Themes/chicken/
     - _Requirements: 2.4, 11.5_
 
-  - [ ] 16.3 Create placeholder background and ground
+  - [x] 16.3 Create placeholder background and ground
     - Create simple colored backgrounds
     - Save as PNG files in Assets/Themes/chicken/
     - _Requirements: 8.2, 8.3, 11.5_
 
-  - [ ] 16.4 Create placeholder UI sprites
+  - [x] 16.4 Create placeholder UI sprites
     - Create simple number sprites (0-9)
     - Create play button, title logo, settings icon
     - Create sound on/off icons
     - Save as PNG files in Assets/UI/
     - _Requirements: 9.1, 12.4_
 
-  - [ ] 16.5 Create placeholder tombstone sprite
+  - [x] 16.5 Create placeholder tombstone sprite
     - Create simple tombstone graphic
     - Save as PNG file in Assets/Themes/chicken/
     - _Requirements: 7.5_
 
-- [ ] 17. Add placeholder sound effects
-  - [ ] 17.1 Create or find placeholder sound files
+- [x] 17. Add placeholder sound effects
+  - [x] 17.1 Create or find placeholder sound files
     - Add fart.wav, collision.wav, score.wav to Assets/Sounds/
     - Use simple beep sounds or royalty-free effects
     - _Requirements: 12.1, 12.2, 12.3_
