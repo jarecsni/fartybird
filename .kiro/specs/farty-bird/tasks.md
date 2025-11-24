@@ -346,26 +346,26 @@
     - Transition back to MenuScene
     - _Requirements: 6.5_
 
-- [ ] 15. Implement GameViewController
-  - [ ] 15.1 Create GameViewController class
+- [x] 15. Implement GameViewController
+  - [x] 15.1 Create GameViewController class
     - Set up SKView
     - Configure view properties (ignoresSiblingOrder, showsFPS, showsNodeCount for debug)
     - _Requirements: 13.5_
 
-  - [ ] 15.2 Implement scene presentation
+  - [x] 15.2 Implement scene presentation
     - Present MenuScene on viewDidLoad
     - Configure scene scale mode for multi-device support
     - _Requirements: 9.1, 10.3, 10.5_
 
-  - [ ] 15.3 Write property test for screen size scaling
+  - [x] 15.3 Write property test for screen size scaling
     - **Property 23: Screen size scaling**
     - **Validates: Requirements 10.3**
 
-  - [ ] 15.4 Write property test for aspect ratio preservation
+  - [x] 15.4 Write property test for aspect ratio preservation
     - **Property 24: Aspect ratio preservation**
     - **Validates: Requirements 10.5**
 
-  - [ ] 15.3 Handle iOS lifecycle events
+  - [x] 15.3 Handle iOS lifecycle events
     - Pause game when app enters background
     - Resume when app becomes active
     - _Requirements: 13.1_
