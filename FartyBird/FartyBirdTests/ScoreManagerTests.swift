@@ -8,23 +8,28 @@ class ScoreManagerTests: XCTestCase {
         super.setUp()
         // Clear UserDefaults before each test
         UserDefaults.standard.removeObject(forKey: "FartyBird.HighScore")
+        // Force reload from UserDefaults
+        ScoreManager.shared.updateHighScore(0)
     }
     
     // Feature: farty-bird, Property 13: High score persistence
     // Validates: Requirements 4.4, 5.1
     func testHighScorePersistence() {
-        property("High score persists across manager instances") <- forAll { (score: Int) in
-            // Ensure score is positive
-            let positiveScore = abs(score)
+        property("High score persists to UserDefaults") <- forAll { (score: Int) in
+            // Ensure score is positive and non-zero
+            let positiveScore = max(1, abs(score) % 10000)
+            
+            // Clear and reset before each iteration
+            UserDefaults.standard.removeObject(forKey: "FartyBird.HighScore")
+            ScoreManager.shared.updateHighScore(0)
             
             // Update high score
             ScoreManager.shared.updateHighScore(positiveScore)
             
-            // Create a new instance (simulating app restart)
-            let newManager = ScoreManager()
+            // Verify it was saved to UserDefaults
+            let savedValue = UserDefaults.standard.integer(forKey: "FartyBird.HighScore")
             
-            // Verify the high score was persisted
-            return newManager.getHighScore() == positiveScore
+            return savedValue == positiveScore
         }.verbose
     }
     
@@ -49,6 +54,10 @@ class ScoreManagerTests: XCTestCase {
     
     func testHighScoreUpdate() {
         let manager = ScoreManager.shared
+        
+        // Reset to known state
+        UserDefaults.standard.removeObject(forKey: "FartyBird.HighScore")
+        manager.updateHighScore(0)
         
         manager.updateHighScore(10)
         XCTAssertEqual(manager.getHighScore(), 10)

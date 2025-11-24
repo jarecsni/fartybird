@@ -116,8 +116,8 @@ class ObstacleManagerTests: XCTestCase {
             let manager = self.createTestManager()
             let scene = SKScene()
             
-            // Spawn multiple obstacles
-            for _ in 0..<10 {
+            // Spawn many obstacles to ensure variation
+            for _ in 0..<50 {
                 manager.generateNextObstacle(in: scene)
             }
             
@@ -129,9 +129,9 @@ class ObstacleManagerTests: XCTestCase {
             // Check if there's variation (not all the same)
             let uniquePositions = Set(positions)
             
-            // With random gap positions, we should have variation
-            // (though theoretically could be all same by chance, very unlikely with 10 obstacles)
-            return uniquePositions.count > 1
+            // With 50 random gap positions, we should definitely have variation
+            // Require at least 5 different positions to account for rounding
+            return uniquePositions.count >= 5
         }.verbose
     }
     

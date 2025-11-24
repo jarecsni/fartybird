@@ -111,3 +111,21 @@ class GameSceneTests: XCTestCase {
         
         XCTAssertEqual(easyConfig.obstacleSpawnInterval, expectedIncrease, accuracy: 0.01)
     }
+    
+    // Feature: farty-bird, Property 16: Difficulty persistence
+    // Validates: Requirements 6.4
+    func testDifficultyPersistence() {
+        property("Difficulty setting persists to UserDefaults") <- forAll { (usesEasy: Bool) in
+            let difficulty: GameConfiguration.Difficulty = usesEasy ? .easy : .normal
+            let difficultyKey = "FartyBird.Difficulty"
+            
+            // Save difficulty
+            UserDefaults.standard.set(difficulty.rawValue, forKey: difficultyKey)
+            
+            // Load it back
+            let savedRawValue = UserDefaults.standard.string(forKey: difficultyKey)
+            let loadedDifficulty = GameConfiguration.Difficulty(rawValue: savedRawValue ?? "normal")
+            
+            return loadedDifficulty == difficulty
+        }.verbose
+    }

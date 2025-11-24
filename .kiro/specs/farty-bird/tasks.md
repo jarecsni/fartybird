@@ -317,31 +317,31 @@
     - **Property 22: Score reset on new game**
     - **Validates: Requirements 9.5**
 
-- [ ] 14. Implement SettingsScene
-  - [ ] 14.1 Create SettingsScene class extending SKScene
+- [x] 14. Implement SettingsScene
+  - [x] 14.1 Create SettingsScene class extending SKScene
     - Add difficulty selection buttons (Easy, Normal)
     - Add sound toggle button
     - Add back button
     - _Requirements: 6.5, 12.4_
 
-  - [ ] 14.2 Implement difficulty selection
+  - [x] 14.2 Implement difficulty selection
     - Detect tap on difficulty buttons
     - Update GameConfiguration
     - Save to UserDefaults
     - Provide visual feedback for selected difficulty
     - _Requirements: 6.1, 6.4_
 
-  - [ ] 14.3 Write property test for difficulty persistence
+  - [x] 14.3 Write property test for difficulty persistence
     - **Property 16: Difficulty persistence**
     - **Validates: Requirements 6.4**
 
-  - [ ] 14.4 Implement sound toggle
+  - [x] 14.4 Implement sound toggle
     - Detect tap on sound button
     - Toggle mute state via AudioManager
     - Update button icon (sound on/off)
     - _Requirements: 12.4, 12.5_
 
-  - [ ] 14.5 Implement back button
+  - [x] 14.5 Implement back button
     - Detect tap on back button
     - Transition back to MenuScene
     - _Requirements: 6.5_

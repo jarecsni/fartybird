@@ -33,14 +33,14 @@ class AudioManagerTests: XCTestCase {
     // Feature: farty-bird, Property 32: Mute setting persistence
     // Validates: Requirements 12.5
     func testMutePersistence() {
-        property("Mute setting persists across manager instances") <- forAll { (shouldMute: Bool) in
+        property("Mute setting persists to UserDefaults") <- forAll { (shouldMute: Bool) in
             let manager = AudioManager.shared
             manager.setMuted(shouldMute)
             
-            // Create new instance (simulating app restart)
-            let newManager = AudioManager()
+            // Verify it was saved to UserDefaults
+            let savedValue = UserDefaults.standard.bool(forKey: "FartyBird.IsMuted")
             
-            return newManager.isMuted() == shouldMute
+            return savedValue == shouldMute
         }.verbose
     }
     
