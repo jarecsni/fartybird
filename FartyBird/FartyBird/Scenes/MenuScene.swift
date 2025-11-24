@@ -18,13 +18,19 @@ class MenuScene: SKScene {
         let uiSprites = AssetManager.shared.loadUISprites()
         
         // Set up title logo
-        setupTitleLogo(texture: uiSprites["titleLogo"]!)
+        if let titleTexture = uiSprites["titleLogo"] {
+            setupTitleLogo(texture: titleTexture)
+        }
         
         // Set up play button
-        setupPlayButton(texture: uiSprites["playButton"]!)
+        if let playTexture = uiSprites["playButton"] {
+            setupPlayButton(texture: playTexture)
+        }
         
         // Set up settings button
-        setupSettingsButton(texture: uiSprites["settingsIcon"]!)
+        if let settingsTexture = uiSprites["settingsIcon"] {
+            setupSettingsButton(texture: settingsTexture)
+        }
         
         // Set up high score display
         setupHighScoreLabel()

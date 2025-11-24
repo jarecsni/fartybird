@@ -323,7 +323,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         ScoreManager.shared.updateHighScore(currentScore)
         
         // Transition to GameOverScene
-        // TODO: Will be implemented when GameOverScene is created
-        print("Game Over! Score: \(currentScore)")
+        let gameOverScene = GameOverScene(size: size, score: currentScore)
+        gameOverScene.scaleMode = scaleMode
+        
+        let transition = SKTransition.fade(withDuration: 0.5)
+        view?.presentScene(gameOverScene, transition: transition)
     }
 }
