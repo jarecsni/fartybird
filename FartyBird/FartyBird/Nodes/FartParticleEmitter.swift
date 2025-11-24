@@ -51,6 +51,9 @@ class FartParticleEmitter {
         // Target node (so particles don't move with character)
         emitter.targetNode = nil // Will be set to scene when added
         
+        // Explicitly ensure no physics body
+        emitter.physicsBody = nil
+        
         return emitter
     }
 }

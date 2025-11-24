@@ -18,7 +18,7 @@ struct GameConfiguration: Codable {
             case .easy:
                 return GameConfiguration(
                     difficulty: .easy,
-                    obstacleGapSize: 180,
+                    obstacleGapSize: 400,  // Massive gap for testing
                     obstacleSpawnInterval: 2.4,
                     scrollSpeed: 150,
                     characterThrust: 350,
@@ -27,7 +27,7 @@ struct GameConfiguration: Codable {
             case .normal:
                 return GameConfiguration(
                     difficulty: .normal,
-                    obstacleGapSize: 140,
+                    obstacleGapSize: 350,  // Massive gap for testing
                     obstacleSpawnInterval: 2.0,
                     scrollSpeed: 150,
                     characterThrust: 350,

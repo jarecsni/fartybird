@@ -31,6 +31,9 @@ class ObstacleManager {
         let margin: CGFloat = 100
         self.minGapY = margin + gapSize / 2
         self.maxGapY = screenHeight - margin - gapSize / 2
+        
+        // Start with a delay before first obstacle
+        self.timeSinceLastSpawn = -1.5  // Negative value delays first spawn
     }
     
     // MARK: - Spawning
@@ -49,12 +52,15 @@ class ObstacleManager {
         obstacle.position = position
         scene.addChild(obstacle)
         obstacles.append(obstacle)
+        
+        print("🌟 Obstacle spawned at X: \(position.x), gap Y: \(gapCenterY)")
     }
     
     func generateNextObstacle(in scene: SKScene) {
         let spawnX = screenWidth + 50 // Spawn off-screen to the right
         let spawnY: CGFloat = 0 // Y position doesn't matter, obstacle handles its own positioning
         
+        print("🌟 Spawning obstacle at X: \(spawnX)")
         spawnObstacle(at: CGPoint(x: spawnX, y: spawnY), in: scene)
     }
     

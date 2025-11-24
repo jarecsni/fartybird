@@ -2,8 +2,8 @@ import SpriteKit
 
 class ObstacleNode: SKNode {
     
-    private let pipeTopSprite: SKSpriteNode
-    private let pipeBottomSprite: SKSpriteNode
+    private let topPipe: SKSpriteNode
+    private let bottomPipe: SKSpriteNode
     private let scoreZone: SKNode
     
     let gapSize: CGFloat
@@ -14,36 +14,59 @@ class ObstacleNode: SKNode {
         self.gapSize = gapSize
         self.gapCenterY = gapCenterY
         
-        // Create pipe sprites
-        pipeTopSprite = SKSpriteNode(texture: topTexture)
-        pipeBottomSprite = SKSpriteNode(texture: bottomTexture)
+        let pipeWidth: CGFloat = 52
+        let halfGap = gapSize / 2
+        let pipeColor = UIColor(red: 0.13, green: 0.69, blue: 0.30, alpha: 1.0)
         
-        // Create score zone
+        // TOP PIPE: From top of screen down to gap (inset by 1 to avoid edge artifacts)
+        let topPipeHeight = screenHeight - (gapCenterY + halfGap) - 1
+        topPipe = SKSpriteNode(color: pipeColor, size: CGSize(width: pipeWidth, height: topPipeHeight))
+        
+        // BOTTOM PIPE: From bottom of screen up to gap (inset by 1 to avoid edge artifacts)
+        let bottomPipeHeight = gapCenterY - halfGap - 1
+        bottomPipe = SKSpriteNode(color: pipeColor, size: CGSize(width: pipeWidth, height: bottomPipeHeight))
+        
         scoreZone = SKNode()
         
         super.init()
         
-        // Position pipes
-        let halfGap = gapSize / 2
+        // Position pipes after super.init()
+        topPipe.anchorPoint = CGPoint(x: 0.5, y: 1.0)
+        topPipe.position = CGPoint(x: 0, y: screenHeight)
         
-        // Top pipe (hangs down from top)
-        pipeTopSprite.anchorPoint = CGPoint(x: 0.5, y: 0)
-        pipeTopSprite.position = CGPoint(x: 0, y: gapCenterY + halfGap)
+        bottomPipe.anchorPoint = CGPoint(x: 0.5, y: 0)
+        bottomPipe.position = CGPoint(x: 0, y: 0)
         
-        // Bottom pipe (rises from bottom)
-        pipeBottomSprite.anchorPoint = CGPoint(x: 0.5, y: 1)
-        pipeBottomSprite.position = CGPoint(x: 0, y: gapCenterY - halfGap)
+        // Physics bodies - offset to match anchor points
+        // Top pipe: anchor at (0.5, 1.0) means sprite extends DOWN from anchor
+        // Physics body center needs to be at -height/2 to cover the sprite
+        let topPhysicsCenter = CGPoint(x: 0, y: -topPipe.size.height / 2)
+        topPipe.physicsBody = SKPhysicsBody(rectangleOf: topPipe.size, center: topPhysicsCenter)
+        topPipe.physicsBody?.categoryBitMask = PhysicsCategory.obstacle
+        topPipe.physicsBody?.contactTestBitMask = PhysicsCategory.character
+        topPipe.physicsBody?.collisionBitMask = 0
+        topPipe.physicsBody?.isDynamic = false
         
-        // Set up physics for pipes
-        setupPipePhysics(pipeTopSprite)
-        setupPipePhysics(pipeBottomSprite)
+        // Bottom pipe: anchor at (0.5, 0.0) means sprite extends UP from anchor
+        // Physics body center needs to be at +height/2 to cover the sprite
+        let bottomPhysicsCenter = CGPoint(x: 0, y: bottomPipe.size.height / 2)
+        bottomPipe.physicsBody = SKPhysicsBody(rectangleOf: bottomPipe.size, center: bottomPhysicsCenter)
+        bottomPipe.physicsBody?.categoryBitMask = PhysicsCategory.obstacle
+        bottomPipe.physicsBody?.contactTestBitMask = PhysicsCategory.character
+        bottomPipe.physicsBody?.collisionBitMask = 0
+        bottomPipe.physicsBody?.isDynamic = false
         
-        // Set up score zone
-        setupScoreZone(gapCenterY: gapCenterY)
+        // Score zone
+        scoreZone.position = CGPoint(x: 0, y: gapCenterY)
+        let zoneBody = SKPhysicsBody(rectangleOf: CGSize(width: 10, height: gapSize))
+        zoneBody.categoryBitMask = PhysicsCategory.scoreZone
+        zoneBody.contactTestBitMask = PhysicsCategory.character
+        zoneBody.collisionBitMask = 0
+        zoneBody.isDynamic = false
+        scoreZone.physicsBody = zoneBody
         
-        // Add children
-        addChild(pipeTopSprite)
-        addChild(pipeBottomSprite)
+        addChild(topPipe)
+        addChild(bottomPipe)
         addChild(scoreZone)
     }
     
@@ -51,30 +74,7 @@ class ObstacleNode: SKNode {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupPipePhysics(_ pipe: SKSpriteNode) {
-        pipe.physicsBody = SKPhysicsBody(rectangleOf: pipe.size)
-        pipe.physicsBody?.categoryBitMask = PhysicsCategory.obstacle
-        pipe.physicsBody?.contactTestBitMask = PhysicsCategory.character
-        pipe.physicsBody?.collisionBitMask = 0
-        pipe.physicsBody?.isDynamic = false
-    }
-    
-    private func setupScoreZone(gapCenterY: CGFloat) {
-        let zoneWidth: CGFloat = 10
-        let zoneHeight = gapSize
-        
-        scoreZone.position = CGPoint(x: 0, y: gapCenterY)
-        
-        let zoneBody = SKPhysicsBody(rectangleOf: CGSize(width: zoneWidth, height: zoneHeight))
-        zoneBody.categoryBitMask = PhysicsCategory.scoreZone
-        zoneBody.contactTestBitMask = PhysicsCategory.character
-        zoneBody.collisionBitMask = 0
-        zoneBody.isDynamic = false
-        
-        scoreZone.physicsBody = zoneBody
-    }
-    
     func getWidth() -> CGFloat {
-        return pipeTopSprite.size.width
+        return topPipe.size.width
     }
 }

@@ -54,13 +54,21 @@ class CharacterNode: SKSpriteNode {
     // MARK: - Physics Setup
     
     private func setupPhysics() {
-        physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2)
+        // Use a smaller collision radius for more forgiving gameplay
+        // Match the visual size more closely - 60% of sprite width
+        let collisionRadius = size.width * 0.3  // 60% diameter = 30% radius on each side
+        physicsBody = SKPhysicsBody(circleOfRadius: collisionRadius)
         physicsBody?.categoryBitMask = PhysicsCategory.character
         physicsBody?.contactTestBitMask = PhysicsCategory.obstacle | PhysicsCategory.ground | PhysicsCategory.scoreZone
         physicsBody?.collisionBitMask = PhysicsCategory.ground
         physicsBody?.isDynamic = true
         physicsBody?.allowsRotation = false
         physicsBody?.restitution = 0
+        
+        // Debug logging
+        print("🐔 Character physics setup:")
+        print("  Visual size: \(size)")
+        print("  Collision radius: \(collisionRadius) (60% of visual width)")
     }
     
     // MARK: - Animation Management

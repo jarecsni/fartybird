@@ -40,14 +40,20 @@ class MenuScene: SKScene {
         titleLogo = SKSpriteNode(texture: texture)
         titleLogo.position = CGPoint(x: size.width / 2, y: size.height * 0.7)
         titleLogo.zPosition = 1
+        
+        // Scale the logo to be wider to accommodate text
+        titleLogo.size = CGSize(width: size.width * 0.8, height: 140)
+        
         addChild(titleLogo)
         
         // Add "Farty Bird" text if using placeholder
         let titleText = SKLabelNode(fontNamed: "Arial-BoldMT")
         titleText.text = "FARTY BIRD"
-        titleText.fontSize = 48
+        titleText.fontSize = 44
         titleText.fontColor = .white
-        titleText.position = CGPoint(x: 0, y: -10)
+        titleText.verticalAlignmentMode = .center
+        titleText.horizontalAlignmentMode = .center
+        titleText.position = CGPoint(x: 0, y: 0)
         titleLogo.addChild(titleText)
     }
     
@@ -56,12 +62,16 @@ class MenuScene: SKScene {
         playButton.position = CGPoint(x: size.width / 2, y: size.height * 0.4)
         playButton.name = "playButton"
         playButton.zPosition = 1
+        
+        // Make button larger and more prominent
+        playButton.size = CGSize(width: 200, height: 80)
+        
         addChild(playButton)
         
         // Add "PLAY" text
         let playText = SKLabelNode(fontNamed: "Arial-BoldMT")
         playText.text = "PLAY"
-        playText.fontSize = 32
+        playText.fontSize = 40
         playText.fontColor = .white
         playText.verticalAlignmentMode = .center
         playText.position = CGPoint(x: 0, y: 0)
@@ -73,6 +83,10 @@ class MenuScene: SKScene {
         settingsButton.position = CGPoint(x: size.width - 50, y: size.height - 50)
         settingsButton.name = "settingsButton"
         settingsButton.zPosition = 1
+        
+        // Make settings icon appropriately sized
+        settingsButton.size = CGSize(width: 50, height: 50)
+        
         addChild(settingsButton)
     }
     

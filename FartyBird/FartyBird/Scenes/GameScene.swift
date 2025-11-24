@@ -38,6 +38,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsManager.setupPhysicsWorld(for: self)
         physicsWorld.contactDelegate = self
         
+        // Enable physics debug drawing
+        #if DEBUG
+        if let view = self.view {
+            view.showsPhysics = true
+        }
+        #endif
+        
         // Load assets
         let assetManager = AssetManager.shared
         let characterSprites = assetManager.loadCharacterSprites(for: assetManager.getCurrentTheme())
@@ -118,7 +125,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     private func setupCharacter(textures: [String: SKTexture]) {
-        let startX = size.width * 0.3
+        let startX = size.width * 0.35  // Position so pipes scroll from right to left past the character
         let startY = size.height * 0.5
         
         character = CharacterNode(textures: textures, topBoundary: size.height - 50)
@@ -230,14 +237,35 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
+        // Debug logging
+        print("🔴 COLLISION DETECTED!")
+        print("  Body A: \(contact.bodyA.node?.name ?? "unnamed") - Category: \(contact.bodyA.categoryBitMask)")
+        if let nodeA = contact.bodyA.node {
+            print("    Position: \(nodeA.position)")
+            print("    Parent position: \(nodeA.parent?.position ?? CGPoint.zero)")
+            print("    Frame: \(nodeA.frame)")
+        }
+        print("  Body B: \(contact.bodyB.node?.name ?? "unnamed") - Category: \(contact.bodyB.categoryBitMask)")
+        if let nodeB = contact.bodyB.node {
+            print("    Position: \(nodeB.position)")
+            print("    Parent position: \(nodeB.parent?.position ?? CGPoint.zero)")
+            print("    Frame: \(nodeB.frame)")
+        }
+        print("  Character position: \(character.position)")
+        print("  Character frame: \(character.frame)")
+        print("  Collision bitmask: \(collision)")
+        print("  Contact point: \(contact.contactPoint)")
+        
         // Check for character-obstacle or character-ground collision
         if collision == (PhysicsCategory.character | PhysicsCategory.obstacle) ||
            collision == (PhysicsCategory.character | PhysicsCategory.ground) {
+            print("💀 GAME OVER TRIGGERED")
             handleGameOver()
         }
         
         // Check for character-scoreZone contact
         if collision == (PhysicsCategory.character | PhysicsCategory.scoreZone) {
+            print("⭐ SCORE ZONE HIT")
             handleScoring(contact: contact)
         }
     }

@@ -47,6 +47,11 @@ This document tracks ideas and features for post-v1.0 releases.
 - **Weather Effects** - Rain, snow, wind particles
 - **Day/Night Cycle** - Background changes over time
 - **Animated Obstacles** - Pipes with steam, moving parts
+- **Textured Pipes** - 3D-effect pipes with oil drippings and surface detail
+  - Challenge: Combine programmatic sizing (variable heights) with detailed textures
+  - Possible approach: Use 9-slice scaling or separate body/cap sprites
+  - Body can stretch, caps stay fixed size with detail
+  - Consider shader effects for drips and reflections
 
 ### Audio Enhancements
 - **Background Music** - Upbeat chiptune soundtrack
