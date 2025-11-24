@@ -404,18 +404,18 @@
     - Use simple beep sounds or royalty-free effects
     - _Requirements: 12.1, 12.2, 12.3_
 
-- [ ] 18. Configure app metadata
-  - [ ] 18.1 Set up app icon
+- [x] 18. Configure app metadata
+  - [x] 18.1 Set up app icon
     - Create app icon in all required sizes
     - Add to Assets.xcassets
     - _Requirements: Deployment_
 
-  - [ ] 18.2 Create launch screen
+  - [x] 18.2 Create launch screen
     - Design simple launch screen with title
     - Configure in LaunchScreen.storyboard
     - _Requirements: Deployment_
 
-  - [ ] 18.3 Configure Info.plist
+  - [x] 18.3 Configure Info.plist
     - Set display name to "Farty Bird"
     - Set supported orientations (portrait only)
     - Set status bar style
