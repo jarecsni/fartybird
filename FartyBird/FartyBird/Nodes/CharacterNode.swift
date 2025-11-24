@@ -143,8 +143,20 @@ class CharacterNode: SKSpriteNode {
             physicsBody?.velocity = CGVector(dx: 0, dy: 0)
         }
         
-        // Update animation based on velocity
+        // Update rotation based on velocity (tilt up when rising, down when falling)
         if let velocity = physicsBody?.velocity.dy {
+            // Rotate character based on vertical velocity
+            // Positive velocity (rising) = tilt up (positive rotation)
+            // Negative velocity (falling) = tilt down (negative rotation)
+            let targetRotation = velocity / 1000 // Scale factor for rotation
+            let clampedRotation = max(-CGFloat.pi / 4, min(CGFloat.pi / 4, targetRotation)) // Clamp to ±45°
+            
+            // Smoothly interpolate to target rotation
+            let rotationSpeed: CGFloat = 5.0
+            let rotationDelta = (clampedRotation - zRotation) * rotationSpeed * CGFloat(deltaTime)
+            zRotation += rotationDelta
+            
+            // Update animation based on velocity
             if velocity < -100 && currentState != .farting {
                 playFallingAnimation()
             } else if velocity >= -100 && currentState == .falling {
