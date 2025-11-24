@@ -37,6 +37,8 @@ class ScoreManager {
             highScore = score
             saveHighScore()
         }
+        // Note: Lower scores don't update high score (as expected)
+        // For testing, tests should clear UserDefaults and reload
     }
     
     // MARK: - Persistence
@@ -48,5 +50,10 @@ class ScoreManager {
     private func loadHighScore() {
         highScore = UserDefaults.standard.integer(forKey: highScoreKey)
         // integer(forKey:) returns 0 if key doesn't exist, which is perfect for our use case
+    }
+    
+    // For testing: force reload from UserDefaults
+    func reloadHighScore() {
+        loadHighScore()
     }
 }

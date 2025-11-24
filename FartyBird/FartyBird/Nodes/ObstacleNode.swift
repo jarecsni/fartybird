@@ -7,10 +7,12 @@ class ObstacleNode: SKNode {
     private let scoreZone: SKNode
     
     let gapSize: CGFloat
+    let gapCenterY: CGFloat
     var hasScoredPoint: Bool = false
     
     init(topTexture: SKTexture, bottomTexture: SKTexture, gapSize: CGFloat, gapCenterY: CGFloat, screenHeight: CGFloat) {
         self.gapSize = gapSize
+        self.gapCenterY = gapCenterY
         
         // Create pipe sprites
         pipeTopSprite = SKSpriteNode(texture: topTexture)

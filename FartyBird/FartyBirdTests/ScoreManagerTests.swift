@@ -21,7 +21,7 @@ class ScoreManagerTests: XCTestCase {
             
             // Clear and reset before each iteration
             UserDefaults.standard.removeObject(forKey: "FartyBird.HighScore")
-            ScoreManager.shared.updateHighScore(0)
+            ScoreManager.shared.reloadHighScore()
             
             // Update high score
             ScoreManager.shared.updateHighScore(positiveScore)
@@ -57,7 +57,7 @@ class ScoreManagerTests: XCTestCase {
         
         // Reset to known state
         UserDefaults.standard.removeObject(forKey: "FartyBird.HighScore")
-        manager.updateHighScore(0)
+        manager.reloadHighScore()
         
         manager.updateHighScore(10)
         XCTAssertEqual(manager.getHighScore(), 10)

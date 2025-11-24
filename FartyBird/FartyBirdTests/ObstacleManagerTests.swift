@@ -123,11 +123,11 @@ class ObstacleManagerTests: XCTestCase {
             
             let obstacles = manager.getObstacles()
             
-            // Get Y positions of obstacles (they vary based on gap position)
-            let positions = obstacles.map { $0.position.y }
+            // Get gap center Y positions (they vary based on random gap position)
+            let gapPositions = obstacles.map { $0.gapCenterY }
             
             // Check if there's variation (not all the same)
-            let uniquePositions = Set(positions)
+            let uniquePositions = Set(gapPositions)
             
             // With 50 random gap positions, we should definitely have variation
             // Require at least 5 different positions to account for rounding
