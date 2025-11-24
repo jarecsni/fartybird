@@ -290,30 +290,30 @@
     - Transition to SettingsScene
     - _Requirements: 9.2_
 
-- [ ] 13. Implement GameOverScene
-  - [ ] 13.1 Create GameOverScene class extending SKScene
+- [x] 13. Implement GameOverScene
+  - [x] 13.1 Create GameOverScene class extending SKScene
     - Display "Game Over" text
     - Display current score
     - Display high score
     - Add restart instruction text
     - _Requirements: 4.5, 9.3_
 
-  - [ ] 13.2 Implement high score update logic
+  - [x] 13.2 Implement high score update logic
     - Compare current score with high score
     - Update high score via ScoreManager if exceeded
     - _Requirements: 4.3, 4.4_
 
-  - [ ] 13.3 Write property test for high score comparison
+  - [x] 13.3 Write property test for high score comparison
     - **Property 12: High score comparison**
     - **Validates: Requirements 4.3**
 
-  - [ ] 13.4 Implement touch handling
+  - [x] 13.4 Implement touch handling
     - Detect tap anywhere on screen
     - Reset score to zero
     - Transition back to GameScene
     - _Requirements: 9.4, 9.5_
 
-  - [ ] 13.5 Write property test for score reset
+  - [x] 13.5 Write property test for score reset
     - **Property 22: Score reset on new game**
     - **Validates: Requirements 9.5**
 

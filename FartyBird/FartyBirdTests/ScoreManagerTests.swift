@@ -61,4 +61,45 @@ class ScoreManagerTests: XCTestCase {
         manager.updateHighScore(15)
         XCTAssertEqual(manager.getHighScore(), 15)
     }
+    
+    // Feature: farty-bird, Property 12: High score comparison
+    // Validates: Requirements 4.3
+    func testHighScoreComparison() {
+        property("High score only updates when new score exceeds current high score") <- forAll { (currentHigh: Int, newScore: Int) in
+            // Ensure scores are positive
+            let positiveHigh = abs(currentHigh)
+            let positiveNew = abs(newScore)
+            
+            // Set initial high score
+            ScoreManager.shared.updateHighScore(positiveHigh)
+            let initialHigh = ScoreManager.shared.getHighScore()
+            
+            // Attempt to update with new score
+            ScoreManager.shared.updateHighScore(positiveNew)
+            let finalHigh = ScoreManager.shared.getHighScore()
+            
+            // High score should be the maximum of the two
+            return finalHigh == max(initialHigh, positiveNew)
+        }.verbose
+    }
+    
+    // Feature: farty-bird, Property 22: Score reset on new game
+    // Validates: Requirements 9.5
+    func testScoreResetOnNewGame() {
+        property("Starting a new game resets score to zero") <- forAll { (randomScore: Int) in
+            let manager = ScoreManager.shared
+            
+            // Set score to some random value
+            let positiveScore = abs(randomScore) % 1000
+            for _ in 0..<positiveScore {
+                manager.incrementScore()
+            }
+            
+            // Reset score (simulating new game start)
+            manager.resetScore()
+            
+            // Score should be zero
+            return manager.getCurrentScore() == 0
+        }.verbose
+    }
 }
