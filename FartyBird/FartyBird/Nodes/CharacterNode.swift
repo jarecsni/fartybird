@@ -137,11 +137,25 @@ class CharacterNode: SKSpriteNode {
     
     private func createFartParticles() {
         let particles = FartParticleEmitter.createFartParticles()
-        // Position at the butt - slightly back and centered vertically
-        particles.position = CGPoint(x: -size.width * 0.2, y: 0)
-        particles.targetNode = self.parent
         
-        addChild(particles)
+        // Calculate world position for the butt
+        let buttOffset = CGPoint(x: -size.width * 0.2, y: 0)
+        let worldPosition = CGPoint(
+            x: position.x + buttOffset.x,
+            y: position.y + buttOffset.y
+        )
+        
+        particles.position = worldPosition
+        // Don't set targetNode - let particles move with the emitter
+        
+        // Add to parent (scene) so particles scroll with the world
+        self.parent?.addChild(particles)
+        
+        // Move the emitter left (scrolling with world) at scroll speed
+        let scrollSpeed: CGFloat = 150 // Match game scroll speed
+        let scrollDistance = scrollSpeed * 1.0 // 1 second lifetime
+        let scrollAction = SKAction.moveBy(x: -scrollDistance, y: 0, duration: 1.0)
+        particles.run(scrollAction)
         
         // Remove particles after they're done
         let wait = SKAction.wait(forDuration: 1.0)

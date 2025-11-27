@@ -31,24 +31,24 @@ class FartParticleEmitter {
         
         emitter.particleTexture = SKTexture(image: circleImage)
         
-        // Birth rate - create a nice visible puff cloud
-        emitter.particleBirthRate = 300
-        emitter.numParticlesToEmit = 25
+        // Birth rate - explosive burst
+        emitter.particleBirthRate = 800
+        emitter.numParticlesToEmit = 40
         
         // Lifetime - cloud expands then disappears
-        emitter.particleLifetime = 0.7
-        emitter.particleLifetimeRange = 0.2
+        emitter.particleLifetime = 0.5
+        emitter.particleLifetimeRange = 0.1
         
-        // Position range - tight cluster
-        emitter.particlePositionRange = CGVector(dx: 5, dy: 5)
+        // Position range - single point source
+        emitter.particlePositionRange = CGVector(dx: 1, dy: 1)
         
-        // Speed - slow expansion
-        emitter.particleSpeed = 25
-        emitter.particleSpeedRange = 15
+        // Speed - very fast explosive burst
+        emitter.particleSpeed = 120
+        emitter.particleSpeedRange = 50
         
-        // Emission angle (downward and backward)
-        emitter.emissionAngle = CGFloat.pi * 1.25 // 225 degrees (down-left)
-        emitter.emissionAngleRange = CGFloat.pi * 0.5
+        // Emission angle (focused backward jet)
+        emitter.emissionAngle = CGFloat.pi // 180 degrees (straight left)
+        emitter.emissionAngleRange = CGFloat.pi * 0.25 // Tighter cone
         
         // Scale - start small, grow to half chicken size
         emitter.particleScale = 0.3
@@ -64,6 +64,10 @@ class FartParticleEmitter {
         emitter.particleAlpha = 0.85
         emitter.particleAlphaRange = 0.15
         emitter.particleAlphaSpeed = -1.3 // Fade as it grows
+        
+        // Acceleration - strong drag to slow down the burst
+        emitter.xAcceleration = 100 // Strong drag effect
+        emitter.yAcceleration = -30 // Downward drift
         
         // Blend mode
         emitter.particleBlendMode = .alpha
