@@ -29,7 +29,13 @@ class CharacterNode: SKSpriteNode {
         // Use idle texture as initial texture
         let initialTexture = textures["idle"] ?? SKTexture()
         
-        super.init(texture: initialTexture, color: .clear, size: initialTexture.size())
+        // Scale down the sprite to 40% of original size for better gameplay
+        let scaledSize = CGSize(
+            width: initialTexture.size().width * 0.4,
+            height: initialTexture.size().height * 0.4
+        )
+        
+        super.init(texture: initialTexture, color: .clear, size: scaledSize)
         
         self.topBoundary = topBoundary
         
@@ -143,7 +149,17 @@ class CharacterNode: SKSpriteNode {
     }
     
     func update(deltaTime: TimeInterval) {
-        guard isAlive else { return }
+        guard isAlive else {
+            // Even when dead, apply rotation for falling effect
+            if let velocity = physicsBody?.velocity.dy {
+                let targetRotation = velocity / 1000
+                let clampedRotation = max(-CGFloat.pi / 2, min(CGFloat.pi / 4, targetRotation))
+                let rotationSpeed: CGFloat = 3.0
+                let rotationDelta = (clampedRotation - zRotation) * rotationSpeed * CGFloat(deltaTime)
+                zRotation += rotationDelta
+            }
+            return
+        }
         
         // Clamp to top boundary
         if position.y > topBoundary {
@@ -164,18 +180,26 @@ class CharacterNode: SKSpriteNode {
             let rotationDelta = (clampedRotation - zRotation) * rotationSpeed * CGFloat(deltaTime)
             zRotation += rotationDelta
             
-            // Update animation based on velocity
-            if velocity < -100 && currentState != .farting {
+            // Update animation based on velocity (don't switch back to idle during free fall)
+            if velocity < -150 && currentState != .farting && currentState != .dead {
                 playFallingAnimation()
-            } else if velocity >= -100 && currentState == .falling {
+            } else if velocity > 50 && currentState == .falling {
+                // Only return to idle if actively rising (not just slowing down)
                 playIdleAnimation()
             }
         }
     }
     
     func die() {
-        isAlive = false
-        currentState = .dead
+        // Don't set isAlive = false yet - let update() continue to handle animation
         physicsBody?.isDynamic = true // Allow falling
+        
+        // After a delay, mark as dead to stop update logic
+        let wait = SKAction.wait(forDuration: 0.5)
+        let markDead = SKAction.run { [weak self] in
+            self?.isAlive = false
+            self?.currentState = .dead
+        }
+        run(SKAction.sequence([wait, markDead]))
     }
 }

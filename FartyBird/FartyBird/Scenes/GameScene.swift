@@ -156,12 +156,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // MARK: - Game Loop
     
     override func update(_ currentTime: TimeInterval) {
-        guard gameState.isPlaying && !isGameOver else { return }
-        
         let deltaTime: TimeInterval = 1.0 / 60.0
         
-        // Update character
+        // Always update character (even after game over for falling animation)
         character.update(deltaTime: deltaTime)
+        
+        guard gameState.isPlaying && !isGameOver else { return }
         
         // Update obstacles
         obstacleManager.updateObstacles(deltaTime: deltaTime)

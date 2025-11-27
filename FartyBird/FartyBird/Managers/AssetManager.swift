@@ -24,24 +24,10 @@ class AssetManager {
     func loadCharacterSprites(for theme: String) -> [String: SKTexture] {
         var sprites: [String: SKTexture] = [:]
         
-        guard let themePath = assetConfig.themes[theme]?.path else {
-            return createPlaceholderCharacterSprites()
-        }
-        
-        // Load idle animation
-        if let idleName = assetConfig.assetNames["characterIdle"] {
-            sprites["idle"] = loadTexture(named: idleName, in: themePath) ?? createPlaceholderTexture(color: .green, size: CGSize(width: 32, height: 32))
-        }
-        
-        // Load fart animation
-        if let fartName = assetConfig.assetNames["characterFart"] {
-            sprites["fart"] = loadTexture(named: fartName, in: themePath) ?? createPlaceholderTexture(color: .yellow, size: CGSize(width: 32, height: 32))
-        }
-        
-        // Load falling animation
-        if let fallingName = assetConfig.assetNames["characterFalling"] {
-            sprites["falling"] = loadTexture(named: fallingName, in: themePath) ?? createPlaceholderTexture(color: .red, size: CGSize(width: 32, height: 32))
-        }
+        // Load from asset catalog (simpler and more reliable)
+        sprites["idle"] = SKTexture(imageNamed: "CharacterIdle")
+        sprites["fart"] = SKTexture(imageNamed: "CharacterFart")
+        sprites["falling"] = SKTexture(imageNamed: "CharacterFalling")
         
         return sprites
     }

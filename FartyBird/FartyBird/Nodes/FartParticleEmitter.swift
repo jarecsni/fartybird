@@ -8,39 +8,39 @@ class FartParticleEmitter {
         // Particle texture (small circle)
         emitter.particleTexture = SKTexture(imageNamed: "spark") // Will use default if not found
         
-        // Birth rate
-        emitter.particleBirthRate = 100
-        emitter.numParticlesToEmit = 20
+        // Birth rate - REDUCED to not cover chicken
+        emitter.particleBirthRate = 30
+        emitter.numParticlesToEmit = 8
         
         // Lifetime
-        emitter.particleLifetime = 0.5
-        emitter.particleLifetimeRange = 0.2
+        emitter.particleLifetime = 0.3
+        emitter.particleLifetimeRange = 0.1
         
         // Position range
-        emitter.particlePositionRange = CGVector(dx: 10, dy: 10)
+        emitter.particlePositionRange = CGVector(dx: 5, dy: 5)
         
         // Speed
-        emitter.particleSpeed = 50
-        emitter.particleSpeedRange = 20
+        emitter.particleSpeed = 30
+        emitter.particleSpeedRange = 10
         
         // Emission angle (downward)
         emitter.emissionAngle = CGFloat.pi * 1.5 // 270 degrees (down)
         emitter.emissionAngleRange = CGFloat.pi * 0.25
         
-        // Scale
-        emitter.particleScale = 0.3
-        emitter.particleScaleRange = 0.1
-        emitter.particleScaleSpeed = -0.2
+        // Scale - SMALLER
+        emitter.particleScale = 0.15
+        emitter.particleScaleRange = 0.05
+        emitter.particleScaleSpeed = -0.3
         
         // Color (white/yellow for fart cloud)
         emitter.particleColor = .white
         emitter.particleColorBlendFactor = 1.0
         emitter.particleColorSequence = nil
         
-        // Alpha
-        emitter.particleAlpha = 0.8
-        emitter.particleAlphaRange = 0.2
-        emitter.particleAlphaSpeed = -1.5
+        // Alpha - MORE TRANSPARENT
+        emitter.particleAlpha = 0.4
+        emitter.particleAlphaRange = 0.1
+        emitter.particleAlphaSpeed = -2.0
         
         // Blend mode
         emitter.particleBlendMode = .alpha

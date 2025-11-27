@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B227755E2ED9075E00130D06 /* character_idle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B227755D2ED9075E00130D06 /* character_idle@2x.png */; };
+		B227755F2ED9075E00130D06 /* character_fart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B227755C2ED9075E00130D06 /* character_fart@2x.png */; };
+		B22775602ED9075E00130D06 /* character_falling@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B227755B2ED9075E00130D06 /* character_falling@2x.png */; };
 		B2B32ADF2ED3E0B2003767CB /* CharacterNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B32AD82ED3E0B2003767CB /* CharacterNode.swift */; };
 		B2B32AE02ED3E0B2003767CB /* PhysicsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B32AD12ED3E0B2003767CB /* PhysicsManager.swift */; };
 		B2B32AE12ED3E0B2003767CB /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B32ADC2ED3E0B2003767CB /* GameScene.swift */; };
@@ -40,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B227755B2ED9075E00130D06 /* character_falling@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "character_falling@2x.png"; sourceTree = "<group>"; };
+		B227755C2ED9075E00130D06 /* character_fart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "character_fart@2x.png"; sourceTree = "<group>"; };
+		B227755D2ED9075E00130D06 /* character_idle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "character_idle@2x.png"; sourceTree = "<group>"; };
 		B2B32AB12ED3DFAE003767CB /* FartyBirdTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FartyBirdTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B32AC62ED3E0B2003767CB /* asset_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = asset_config.json; sourceTree = "<group>"; };
 		B2B32ACE2ED3E0B2003767CB /* AssetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetManager.swift; sourceTree = "<group>"; };
@@ -112,6 +118,9 @@
 		B2B32ACA2ED3E0B2003767CB /* chicken */ = {
 			isa = PBXGroup;
 			children = (
+				B227755B2ED9075E00130D06 /* character_falling@2x.png */,
+				B227755C2ED9075E00130D06 /* character_fart@2x.png */,
+				B227755D2ED9075E00130D06 /* character_idle@2x.png */,
 			);
 			path = chicken;
 			sourceTree = "<group>";
@@ -327,6 +336,9 @@
 			files = (
 				B2B32AEC2ED3E0B2003767CB /* asset_config.json in Resources */,
 				FA0000050000000000000001 /* Assets.xcassets in Resources */,
+				B227755E2ED9075E00130D06 /* character_idle@2x.png in Resources */,
+				B227755F2ED9075E00130D06 /* character_fart@2x.png in Resources */,
+				B22775602ED9075E00130D06 /* character_falling@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
