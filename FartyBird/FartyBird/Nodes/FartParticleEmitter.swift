@@ -5,42 +5,65 @@ class FartParticleEmitter {
     static func createFartParticles() -> SKEmitterNode {
         let emitter = SKEmitterNode()
         
-        // Particle texture (small circle)
-        emitter.particleTexture = SKTexture(imageNamed: "spark") // Will use default if not found
+        // Create a circular particle texture programmatically
+        let size = CGSize(width: 32, height: 32)
+        let renderer = UIGraphicsImageRenderer(size: size)
+        let circleImage = renderer.image { context in
+            // Draw a soft circular gradient
+            let rect = CGRect(origin: .zero, size: size)
+            let center = CGPoint(x: size.width / 2, y: size.height / 2)
+            let radius = size.width / 2
+            
+            // Create radial gradient (white center fading to transparent)
+            let colors = [UIColor.white.cgColor, UIColor.white.withAlphaComponent(0).cgColor]
+            let colorSpace = CGColorSpaceCreateDeviceRGB()
+            let gradient = CGGradient(colorsSpace: colorSpace, colors: colors as CFArray, locations: [0.0, 1.0])!
+            
+            context.cgContext.drawRadialGradient(
+                gradient,
+                startCenter: center,
+                startRadius: 0,
+                endCenter: center,
+                endRadius: radius,
+                options: []
+            )
+        }
         
-        // Birth rate - REDUCED to not cover chicken
-        emitter.particleBirthRate = 30
-        emitter.numParticlesToEmit = 8
+        emitter.particleTexture = SKTexture(image: circleImage)
         
-        // Lifetime
-        emitter.particleLifetime = 0.3
-        emitter.particleLifetimeRange = 0.1
+        // Birth rate - create a nice visible puff cloud
+        emitter.particleBirthRate = 300
+        emitter.numParticlesToEmit = 25
         
-        // Position range
+        // Lifetime - cloud expands then disappears
+        emitter.particleLifetime = 0.7
+        emitter.particleLifetimeRange = 0.2
+        
+        // Position range - tight cluster
         emitter.particlePositionRange = CGVector(dx: 5, dy: 5)
         
-        // Speed
-        emitter.particleSpeed = 30
-        emitter.particleSpeedRange = 10
+        // Speed - slow expansion
+        emitter.particleSpeed = 25
+        emitter.particleSpeedRange = 15
         
-        // Emission angle (downward)
-        emitter.emissionAngle = CGFloat.pi * 1.5 // 270 degrees (down)
-        emitter.emissionAngleRange = CGFloat.pi * 0.25
+        // Emission angle (downward and backward)
+        emitter.emissionAngle = CGFloat.pi * 1.25 // 225 degrees (down-left)
+        emitter.emissionAngleRange = CGFloat.pi * 0.5
         
-        // Scale - SMALLER
-        emitter.particleScale = 0.15
-        emitter.particleScaleRange = 0.05
-        emitter.particleScaleSpeed = -0.3
+        // Scale - start small, grow to half chicken size
+        emitter.particleScale = 0.3
+        emitter.particleScaleRange = 0.1
+        emitter.particleScaleSpeed = 1.5 // Grow big
         
-        // Color (white/yellow for fart cloud)
-        emitter.particleColor = .white
+        // Color (gray cloud)
+        emitter.particleColor = UIColor(red: 0.75, green: 0.75, blue: 0.75, alpha: 1.0)
         emitter.particleColorBlendFactor = 1.0
         emitter.particleColorSequence = nil
         
-        // Alpha - MORE TRANSPARENT
-        emitter.particleAlpha = 0.4
-        emitter.particleAlphaRange = 0.1
-        emitter.particleAlphaSpeed = -2.0
+        // Alpha - more visible
+        emitter.particleAlpha = 0.85
+        emitter.particleAlphaRange = 0.15
+        emitter.particleAlphaSpeed = -1.3 // Fade as it grows
         
         // Blend mode
         emitter.particleBlendMode = .alpha

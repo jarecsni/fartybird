@@ -137,7 +137,8 @@ class CharacterNode: SKSpriteNode {
     
     private func createFartParticles() {
         let particles = FartParticleEmitter.createFartParticles()
-        particles.position = CGPoint(x: 0, y: -size.height / 2)
+        // Position at the butt - slightly back and centered vertically
+        particles.position = CGPoint(x: -size.width * 0.2, y: 0)
         particles.targetNode = self.parent
         
         addChild(particles)
